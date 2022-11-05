@@ -1,4 +1,4 @@
-package heroes.heroes.controller;
+package heroes.controller;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import heroes.heroes.model.Heroe;
+import heroes.model.Heroe;
 
 @Controller
 public class HeroesController{

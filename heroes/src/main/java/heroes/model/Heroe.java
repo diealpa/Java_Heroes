@@ -1,4 +1,4 @@
-package heroes.heroes.model;
+package heroes.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
