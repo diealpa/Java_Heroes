@@ -11,12 +11,12 @@ enviado en la petición. Por ejemplo, si enviamos “man” devolverá “Spiderman”, “S
 • Eliminar un súper héroe.
 • Test unitarios de algún servicio.
 
-Puntos a tener en cuenta:
+
 • Los súper héroes se deben guardar en una base de datos H2 en memoria.
 • La prueba se debe presentar en un repositorio de Git. No hace falta que esté publicado. Se
 puede pasar comprimido en un único archivo.
 
-Puntos opcionales de mejora:
+
 • Utilizar alguna librería que facilite el mantenimiento de los scripts DDL de base de datos.
 • Implementar una anotación personalizada que sirva para medir cuánto tarda en ejecutarse.
 una petición. Se podría anotar alguno o todos los métodos de la API con esa anotación.
