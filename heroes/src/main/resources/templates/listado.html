@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Listado de superheroes </title>
+</head>
+<body>
+	
+	<h1> Superheroes existentes </h1> 
+	<ol>
+		<li th:each="tmpHero:${heroes}" th:text="${tmpHero}"> </li>
+	</ol>
+	
+</body>
+</html>

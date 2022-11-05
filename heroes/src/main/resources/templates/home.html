@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title> Almacén de superheroes </title>
 </head>
 <body>
-	<h1> Bienvenido al almacén de superheroes</h1>
+	<h1 th:text="${mensaje}"> Bienvenido al almacén de superheroes</h1>
+	<h2> hoy es [[${fecha}]] <
 
 </body>
 </html>

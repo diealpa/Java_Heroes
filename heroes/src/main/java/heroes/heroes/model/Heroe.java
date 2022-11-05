@@ -1,22 +1,26 @@
 package heroes.heroes.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
-//mirar esto para base de datos H2
+
 //@Entity
-//@Table(name="heroe")
+//@Table(name="heroes")
 public class Heroe {
 	
-	private Integer id;
+	//@Id
+	//@Column(name="heroe_id")
+	private Long id;
 	private String nombre;
 	private String superpoder;
 	
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNombre() {
@@ -25,17 +29,17 @@ public class Heroe {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	
 	public String getSuperpoder() {
 		return superpoder;
 	}
 	public void setSuperpoder(String superpoder) {
 		this.superpoder = superpoder;
 	}
-	
 	@Override
 	public String toString() {
-		return "Heroe [id=" + id + ", nombre=" + nombre + ", superpoder=" + superpoder + "]"; 
-		
+		return "Heroe [id=" + id + ", nombre=" + nombre + ", superpoder=" + superpoder + "]";
 	}
 	
 	
