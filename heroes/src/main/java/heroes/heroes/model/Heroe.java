@@ -1,17 +1,17 @@
 package heroes.heroes.model;
 
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
-//@Entity
-//@Table(name="heroes")
+@Entity
+@Table(name="heroes")
 public class Heroe {
 	
-	//@Id
-	//@Column(name="heroe_id")
+	@Id
+	@Column(name="heroe_id")
 	private Integer id;
 	private String nombre;
 	private String superpoder;
