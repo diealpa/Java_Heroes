@@ -2,19 +2,21 @@ package heroes.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="heroes")
+@Table(name="Heroes")
 public class Heroe {
 	
 	@Id
-	@Column(name="heroe_id")
-	private Integer id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;	
 	private String nombre;
-	private String superpoder;
+    private String superpoder;
 	
 	
 	public Integer getId() {

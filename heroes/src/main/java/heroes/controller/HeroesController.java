@@ -12,7 +12,7 @@ import heroes.model.Heroe;
 
 @Controller
 public class HeroesController{
-
+    /*
 	@GetMapping("/tabla")
 	public String mostrarTabla(Model model) {
 		List<Heroe> lista = getHeroes();
@@ -82,7 +82,7 @@ public class HeroesController{
 		
 		return superlista;
 		
-	}
+	}*/
 	
 	
 }
