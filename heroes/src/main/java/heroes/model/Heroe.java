@@ -9,14 +9,18 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Heroes")
+@Table(name="heroes")
 public class Heroe {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;	
+	
+	@Column(name="nombre")
 	private String nombre;
-    private String superpoder;
+
+	@Column(name="superpoder")
+	private String superpoder;
 	
 	
 	public Integer getId() {
