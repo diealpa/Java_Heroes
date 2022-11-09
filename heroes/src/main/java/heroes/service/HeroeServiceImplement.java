@@ -1,6 +1,7 @@
 package heroes.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,12 @@ public class HeroeServiceImplement implements HeroeService  {
 	@Override
 	public void eliminarporid(Integer idHeroe) {
 		repo.deleteById(idHeroe);
+		
+	}
+
+	@Override
+	public Optional<Heroe> buscarporid(Integer idHeroe) {
+		 return repo.findById(idHeroe);
 		
 	}
 

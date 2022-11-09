@@ -2,13 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title> Detalle de superheroes </title>
+<title> Detalle del Superheroe </title>
 </head>
 <body>
 	
-	<h1> Detalle de Superheroes existentes </h1> 
-	<h3 th:text="'Nombre: '+ ${detallesheroe.nombre}"> </h3>
-	<h3 th:text="'Superpoder: '+ ${detallesheroe.superpoder}"> </h3>
+	<h1> Detalle del Superheroe </h1> 
+	<h3 th:text="'ID: '+ ${heroee.id}"> </h3>
+	<h3 th:text="'Nombre: '+ ${heroee.nombre}"> </h3>
+	<h3 th:text="'Superpoder: '+ ${heroee.superpoder}"> </h3>
+
+
 	
 </body>
 </html>
