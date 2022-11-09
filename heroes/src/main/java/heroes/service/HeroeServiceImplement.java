@@ -18,4 +18,26 @@ public class HeroeServiceImplement implements HeroeService  {
 		return (List<Heroe>) repo.findAll();
 	}
 
+	@Override
+	public void eliminar_todos() {
+		repo.deleteAll();
+		
+	}
+
+	@Override
+	public void guardar(Heroe heroe) {
+		repo.save(heroe);
+		
+	}
+
+	@Override
+	public void eliminarporid(Integer idHeroe) {
+		repo.deleteById(idHeroe);
+		
+	}
+
+	 
+	
+	
+
 }

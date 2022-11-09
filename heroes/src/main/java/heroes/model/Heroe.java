@@ -13,7 +13,6 @@ import javax.persistence.Table;
 public class Heroe {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;	
 	
 	@Column(name="nombre")

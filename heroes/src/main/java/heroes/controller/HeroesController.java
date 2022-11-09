@@ -8,13 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import heroes.model.Heroe;
 import heroes.service.HeroeService;
 
-@RestController
+@Controller
 //@RequestMapping(value="informacion")
 public class HeroesController{
 	
@@ -23,9 +26,45 @@ public class HeroesController{
     
 	
 	@GetMapping("/listado")
-	public List<Heroe> getTasks() {
-		return heroeService.getHeroes();
+	public String getHeros(Model model) {
+		List<Heroe> heroe = heroeService.getHeroes();
+		model.addAttribute("heroes",heroe);
+		return "tabla";
 	}
+	
+	@GetMapping("/eliminar")
+	public String eliminar() {
+		heroeService.eliminar_todos();
+		return "Ha eliminado todos los superheroes de la base de datos";
+	}
+	
+	@GetMapping("/crear")
+	public String crear() {
+		return "nuevo";
+	}
+	
+	@PostMapping("/guardar")
+	public String guardar(@RequestParam("id")Integer id,@RequestParam("nombre")String nombre,@RequestParam("superpoder")String superpoder) {
+		Heroe heroe = new Heroe();
+		heroe.setId(id); 
+		heroe.setNombre(nombre);
+		heroe.setSuperpoder(superpoder);
+		heroeService.guardar(heroe);
+		
+		return "redirect:/listado";
+	}
+	
+	
+	@GetMapping("/eliminarid")
+	public String fuera(@RequestParam int idborrado) {
+		heroeService.eliminarporid(idborrado);
+		return "redirect:/listado";
+		}
+	
+	
+	
+	
+	
 	/*
 	
 	@GetMapping("/detalle")

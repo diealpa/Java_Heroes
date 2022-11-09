@@ -1,9 +1,8 @@
 package heroes.repository;
 
-import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import heroes.model.Heroe;
 
-public interface HeroesRepository extends CrudRepository<Heroe, Integer> {
+public interface HeroesRepository extends JpaRepository<Heroe, Integer> {
 
 }
