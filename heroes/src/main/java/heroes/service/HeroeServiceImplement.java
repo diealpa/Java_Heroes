@@ -43,6 +43,12 @@ public class HeroeServiceImplement implements HeroeService  {
 		
 	}
 
+	@Override
+	public boolean existeId(Integer id) {
+		
+		return repo.existsById(id);
+	}
+
 	 
 	
 	

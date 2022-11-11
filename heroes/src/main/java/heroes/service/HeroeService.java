@@ -11,5 +11,6 @@ public interface HeroeService {
     public void guardar(Heroe heroe);
     public void eliminarporid(Integer idHeroe);
     public Optional<Heroe> buscarporid(Integer idHeroe);
+    boolean existeId(Integer id);
 
 }

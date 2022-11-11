@@ -27,7 +27,7 @@ public class HeroesController{
 	private HeroeService heroeService;
     
 	
-	@GetMapping("/listado")
+	@GetMapping("/")
 	public String getHeros(Model model) {
 		List<Heroe> heroe = heroeService.getHeroes();
 		model.addAttribute("heroes",heroe);
@@ -41,37 +41,36 @@ public class HeroesController{
 	}
 	
 	@GetMapping("/crear")
-	public String crear() {
+	public String crear(Model model) {
+		Heroe heroe = new Heroe();
+		model.addAttribute("heroe",heroe);
 		return "nuevo";
 	}
 	
 	@PostMapping("/guardar")
-	public String guardar(@RequestParam("id")Integer id,@RequestParam("nombre")String nombre,@RequestParam("superpoder")String superpoder) {
-		Heroe heroe = new Heroe();
-		heroe.setId(id); 
-		heroe.setNombre(nombre);
-		heroe.setSuperpoder(superpoder);
+	public String guardar(Heroe heroe) {
+		 
 		heroeService.guardar(heroe);
 		
-		return "redirect:/listado";
+		return "redirect:/";
 	}
 	
 	
 	@GetMapping("/eliminarid")
 	public String eliminacion(@RequestParam int idborrado) {
 		heroeService.eliminarporid(idborrado);
-		return "redirect:/listado";
+		return "redirect:/";
 		}
 	
 	
-	@GetMapping("/actualizarid")
-	public String actualizar(@RequestParam int idactualizado, Model model) {
+	@GetMapping("/actualizarid/{id}")
+	public String actualizar(@PathVariable("id") int idactualizado, Model model) {
 		 //FALTA IMPLEMENTAR, 'idactualizado' viene de la vista "tabla.html" MIRAR video 122 del curso
 		
 		Heroe heroe = heroeService.buscarporid(idactualizado).get();
-		model.addAttribute("heroee", heroe);
+		model.addAttribute("heroe", heroe);
 		
-		return"detalle";
+		return"/nuevo";
 	}
 	
 
