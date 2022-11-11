@@ -13,12 +13,13 @@ import javax.persistence.Table;
 public class Heroe {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;	
 	
-	@Column(name="nombre")
+	@Column(name="nombre", nullable = false, length =50)
 	private String nombre;
 
-	@Column(name="superpoder")
+	@Column(name="superpoder", nullable = false, length =50)
 	private String superpoder;
 	
 	

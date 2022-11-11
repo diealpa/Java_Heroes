@@ -12,5 +12,6 @@ public interface HeroeService {
     public void eliminarporid(Integer idHeroe);
     public Optional<Heroe> buscarporid(Integer idHeroe);
     boolean existeId(Integer id);
+    public List<Heroe> buscarTodos(String busqueda);
 
 }

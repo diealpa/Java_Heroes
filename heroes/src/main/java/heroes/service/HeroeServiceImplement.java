@@ -48,6 +48,16 @@ public class HeroeServiceImplement implements HeroeService  {
 		
 		return repo.existsById(id);
 	}
+	
+	@Override
+	public List<Heroe> buscarTodos(String busqueda){
+		if(busqueda != null) {
+			repo.buscarTodos(busqueda);
+			return repo.buscarTodos(busqueda);
+		}
+		
+		return repo.findAll();
+	}
 
 	 
 	

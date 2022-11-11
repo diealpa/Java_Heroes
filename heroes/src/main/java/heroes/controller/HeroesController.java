@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,9 +29,12 @@ public class HeroesController{
     
 	
 	@GetMapping("/")
-	public String getHeros(Model model) {
-		List<Heroe> heroe = heroeService.getHeroes();
+	public String getHeros(Model model, @Param("busqueda") String busqueda) {
+		List<Heroe> heroe = heroeService.buscarTodos(busqueda);
+		
 		model.addAttribute("heroes",heroe);
+		model.addAttribute("busqueda",busqueda);
+		
 		return "tabla";
 	}
 	
