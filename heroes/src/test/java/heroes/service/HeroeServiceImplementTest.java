@@ -1,6 +1,8 @@
 package heroes.service;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +16,7 @@ import heroes.model.Heroe;
 public class HeroeServiceImplementTest {
 	
 	Heroe heroe;
-	HeroeServiceImplement service;
+	HeroeService service;
 		
 @Value("${1}")
 	Integer idtest;
@@ -23,12 +25,16 @@ public class HeroeServiceImplementTest {
 
 @Test
 void test(){
-		heroe.setId(idtest);
-		
-		
+	heroe.setId(idtest);  
 	Assertions.assertEquals(service.existeId(heroe.getId()), ("1"));
 
 		  }
+
+@Test
+public void whenEliminate() {
+	
+ assertThat(service.eliminarTodos()).isNotNull();
+}
 
 
 }
