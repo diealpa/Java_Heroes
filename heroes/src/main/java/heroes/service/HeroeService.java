@@ -7,10 +7,10 @@ import heroes.model.Heroe;
 public interface HeroeService {
 	
 	public List<Heroe> getHeroes();
-	public void eliminar_todos();
+	public void eliminarTodos();
     public void guardar(Heroe heroe);
-    public void eliminarporid(Integer idHeroe);
-    public Optional<Heroe> buscarporid(Integer idHeroe);
+    public void eliminarPorId(Integer idHeroe);
+    public Optional<Heroe> buscarPorId(Integer idHeroe);
     boolean existeId(Integer id);
     public List<Heroe> buscarTodos(String busqueda);
 

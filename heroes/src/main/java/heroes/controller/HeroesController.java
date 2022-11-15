@@ -40,7 +40,7 @@ public class HeroesController{
 	
 	@GetMapping("/eliminar")
 	public String eliminar() {
-		heroeService.eliminar_todos();
+		heroeService.eliminarTodos();
 		return "Ha eliminado todos los superheroes de la base de datos";
 	}
 	
@@ -62,7 +62,7 @@ public class HeroesController{
 	
 	@GetMapping("/eliminarid")
 	public String eliminacion(@RequestParam int idborrado) {
-		heroeService.eliminarporid(idborrado);
+		heroeService.eliminarPorId(idborrado);
 		return "redirect:/";
 		}
 	
@@ -71,7 +71,7 @@ public class HeroesController{
 	public String actualizar(@PathVariable("id") int idactualizado, Model model) {
 		 //FALTA IMPLEMENTAR, 'idactualizado' viene de la vista "tabla.html" MIRAR video 122 del curso
 		
-		Heroe heroe = heroeService.buscarporid(idactualizado).get();
+		Heroe heroe = heroeService.buscarPorId(idactualizado).get();
 		model.addAttribute("heroe", heroe);
 		
 		return"/nuevo";

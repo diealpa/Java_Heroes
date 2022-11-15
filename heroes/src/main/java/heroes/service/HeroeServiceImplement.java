@@ -20,7 +20,7 @@ public class HeroeServiceImplement implements HeroeService  {
 	}
 
 	@Override
-	public void eliminar_todos() {
+	public void eliminarTodos() {
 		repo.deleteAll();
 		
 	}
@@ -32,13 +32,13 @@ public class HeroeServiceImplement implements HeroeService  {
 	}
 
 	@Override
-	public void eliminarporid(Integer idHeroe) {
+	public void eliminarPorId(Integer idHeroe) {
 		repo.deleteById(idHeroe);
 		
 	}
 
 	@Override
-	public Optional<Heroe> buscarporid(Integer idHeroe) {
+	public Optional<Heroe> buscarPorId(Integer idHeroe) {
 		 return repo.findById(idHeroe);
 		
 	}
