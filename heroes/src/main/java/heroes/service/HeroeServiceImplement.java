@@ -54,6 +54,12 @@ public class HeroeServiceImplement implements HeroeService  {
 		return repo.findAll();
 	}
 
+
+	@Override
+	public void eliminarTodos() { 
+		repo.deleteAllInBatch();
+	}
+
 	 
 	
 	

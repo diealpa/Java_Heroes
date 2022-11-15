@@ -1,7 +1,8 @@
 package heroes.service;
 
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -18,23 +19,37 @@ public class HeroeServiceImplementTest {
 	Heroe heroe;
 	HeroeService service;
 		
-@Value("${1}")
+	@Value("${1}")
 	Integer idtest;
 
 
 
-@Test
-void test(){
-	heroe.setId(idtest);  
-	Assertions.assertEquals(service.existeId(heroe.getId()), ("1"));
-
-		  }
-
-@Test
-public void whenEliminate() {
+	@Test
+	void test(){
+		heroe.setId(idtest);  
+		Assertions.assertEquals(service.existeId(heroe.getId()), ("1"));
 	
- assertThat(service.eliminarTodos()).isNotNull();
-}
+			  }
+
+	@Test
+	public void testBuscarTodos() { 
+		assertEquals(4, service.buscarTodos("").size());
+	}
+	
+	@Test
+	public void testEliminarTodos() {
+		Heroe heroe2 = new Heroe();
+		heroe2.setId(5);
+		heroe2.setNombre("Hombre Araña");
+		heroe2.setSuperpoder("Volar");
+		
+		service.guardar(heroe2); 
+		service.eliminarTodos();
+		
+		assertEquals(0, service.buscarTodos("").size());
+		
+		
+	}
 
 
 }

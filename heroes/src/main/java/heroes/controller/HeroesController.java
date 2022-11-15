@@ -60,6 +60,12 @@ public class HeroesController{
 		return "redirect:/";
 		}
 	
+	@GetMapping("/eliminarTodos")
+	public String eliminar() {
+		heroeService.eliminarTodos();
+		return "redirect:/";	
+	}
+	
 	
 	@GetMapping("/actualizarid/{id}")
 	public String actualizar(@PathVariable("id") int idactualizado, Model model) {
