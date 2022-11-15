@@ -1,5 +1,7 @@
 package heroes.repository;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +21,10 @@ public class UsuarioRepositoryTest {
 		usua.setNombre("pepe");
 		usua.setClave("clave");
 		
-		repo.save(usua);
+		Usuario usuario2 = repo.save(usua);
+		
+		assertTrue(usua.getClave().equalsIgnoreCase(usuario2.getNombre()));
+
 	}
 
 }

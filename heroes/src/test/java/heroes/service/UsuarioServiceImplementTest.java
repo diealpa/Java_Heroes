@@ -1,5 +1,7 @@
 package heroes.service;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +22,8 @@ public class UsuarioServiceImplementTest {
 		usua.setClave("clave");
 		
 		service.crearUsuario(usua);
+		
+		assertTrue(usua.getClave().equalsIgnoreCase("clave"));
 	}
 	
 	
