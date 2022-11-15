@@ -17,23 +17,28 @@ import heroes.model.Heroe;
 public class HeroeServiceImplementTest {
 	
 	Heroe heroe;
-	HeroeService service;
-		
+	HeroeService service; 
 	@Value("${1}")
-	Integer idtest;
-
+	Integer idtest; 
 
 
 	@Test
-	void test(){
+	void testExisteId(){
 		heroe.setId(idtest);  
-		Assertions.assertEquals(service.existeId(heroe.getId()), ("1"));
-	
-			  }
+		Assertions.assertEquals(service.existeId(heroe.getId()), 1); 
+	}
 
 	@Test
-	public void testBuscarTodos() { 
-		assertEquals(4, service.buscarTodos("").size());
+	public void testBuscarTodos() {
+		
+		service.eliminarTodos();
+		
+		Heroe sup = new Heroe();
+		sup.setId(19);
+		sup.setNombre("Pantera Negra");
+		sup.setSuperpoder("Super traje");
+		
+		assertEquals(1, service.buscarTodos("").size());
 	}
 	
 	@Test
@@ -46,8 +51,7 @@ public class HeroeServiceImplementTest {
 		service.guardar(heroe2); 
 		service.eliminarTodos();
 		
-		assertEquals(0, service.buscarTodos("").size());
-		
+		assertEquals(0, service.buscarTodos("").size()); 
 		
 	}
 
