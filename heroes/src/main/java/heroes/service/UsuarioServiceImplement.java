@@ -12,6 +12,12 @@ public class UsuarioServiceImplement implements UsuarioService  {
 	@Autowired
 	private UsuarioRepository repo; 
 	
-	
+	@Override
+	public void crearUsuario(Usuario usuario) {
+		
+		repo.save(usuario);
+		
+		
+	}
 	
 }

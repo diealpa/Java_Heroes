@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import heroes.model.Usuario;
-import heroes.repository.UsuarioRepository;
 
 @SpringBootTest
 public class UsuarioServiceImplementTest {

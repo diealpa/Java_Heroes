@@ -6,7 +6,7 @@ public interface UsuarioService {
 	
 	
 	
-	 
+	public void crearUsuario(Usuario usuario);
 
 	 
 
