@@ -19,11 +19,6 @@ public class HeroeServiceImplement implements HeroeService  {
 		return (List<Heroe>) repo.findAll();
 	}
 
-	@Override
-	public void eliminarTodos() {
-		repo.deleteAll();
-		
-	}
 
 	@Override
 	public void guardar(Heroe heroe) {

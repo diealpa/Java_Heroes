@@ -1,7 +1,6 @@
 package heroes.controller;
 
-import java.util.Date;
-import java.util.LinkedList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,6 @@ import heroes.model.Heroe;
 import heroes.service.HeroeService;
 
 @Controller
-//@RequestMapping(value="informacion")
 public class HeroesController{
 	
 	@Autowired
@@ -38,11 +36,7 @@ public class HeroesController{
 		return "tabla";
 	}
 	
-	@GetMapping("/eliminar")
-	public String eliminar() {
-		heroeService.eliminarTodos();
-		return "Ha eliminado todos los superheroes de la base de datos";
-	}
+	
 	
 	@GetMapping("/crear")
 	public String crear(Model model) {

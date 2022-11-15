@@ -12,6 +12,9 @@ import heroes.model.Heroe;
 
 @SpringBootTest
 public class HeroeServiceImplementTest {
+	
+	Heroe heroe;
+	HeroeServiceImplement service;
 		
 @Value("${1}")
 	Integer idtest;
@@ -20,9 +23,8 @@ public class HeroeServiceImplementTest {
 
 @Test
 void test(){
-	Heroe heroe = new Heroe();
 		heroe.setId(idtest);
-		HeroeServiceImplement service = new HeroeServiceImplement();
+		
 		
 	Assertions.assertEquals(service.existeId(heroe.getId()), ("1"));
 
